@@ -1,9 +1,9 @@
-FROM          node:alpine3.11
+FROM          node:alpine3.16
 COPY          . /root/app/
 WORKDIR       /root/app/
 RUN           yarn && yarn build
 
-FROM          alpine:3.11.0
+FROM          alpine:3.16.0
 COPY --from=0 /usr/local/bin/node /usr/local/bin/
 RUN           apk add --no-cache libgcc libstdc++
 COPY --from=0 /root/app/build/index.js /usr/local/bin/frag
