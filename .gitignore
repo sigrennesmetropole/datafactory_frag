@@ -1,0 +1,7 @@
+node_modules
+build
+samples/rm-test.js
+ignore
+coverage
+src/bin/constants.ts
+data

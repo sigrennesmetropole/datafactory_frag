@@ -1,0 +1,14 @@
+**/*.tsbuildinfo
+node_modules
+sample
+src
+test
+demo.gif
+jest.config.js
+tsconfig.base.json
+tsconfig.json
+yarn.lock
+.env
+.eslintignore
+.eslintrc.js
+.gitignore
