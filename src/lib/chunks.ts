@@ -150,7 +150,7 @@ export async function* createChunks(
     objIndex++;
   }
 logForFrag(rows);
-  stdout({ complete: 1, code: 1, description: `${rows.length} file(s) have been processed.` });
+  stdout({ progress: 0.5, description: `${rows.length} file(s) have been processed.` });
 
   // once we are done iterating over all the objects, we might still
   // have the last chunk (the current one) to handle, so let's do this:
