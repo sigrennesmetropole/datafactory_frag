@@ -349,13 +349,14 @@ async function aggregateOnChunk(
         throw new Error(`'${ext}' handling is not implemented yet`);
     }
   }
-  await pipe(
+  await pipe([
     objStream,
+    ...strategies,
     createGzip({ flush: constants.Z_NO_FLUSH }),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     countBytes(chunk) as any,
     fs.createWriteStream(chunk.filepath, { flags: 'a' }),
-  );
+  ]);
   chunk.files.push(file);
 }
 
