@@ -351,6 +351,7 @@ async function aggregateOnChunk(
   }
   await pipe(
     objStream,
+    ...strategies as [],
     createGzip({ flush: constants.Z_NO_FLUSH }),
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     countBytes(chunk) as any,
