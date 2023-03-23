@@ -95,7 +95,7 @@ export class S3Driver implements IDriver {
 
     for (const file of filenamesCSV){
       if(file.includes("frag-chunk-")){
-        await execShellcmd(`sed '1idatetime;predefinedLocationReference;averageVehicleSpeed;travelTime;travelTimeReliability;trafficStatus' -i /tmp/${file}`,"Mise en place d'un header au debut") // we had at the start of each file our header
+        await execShellcmd(`sed '1idatetime;predefinedLocationReference;averageVehicleSpeed;travelTime;travelTimeReliability;trafficStatus;vehicleProbeMeasurement' -i /tmp/${file}`,"Mise en place d'un header au debut") // we had at the start of each file our header
       }
     }
 
